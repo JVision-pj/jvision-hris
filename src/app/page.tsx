@@ -110,30 +110,29 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="console" aria-label="Jvision HRIS Demo 工作台">
-          <div className="window-bar">
-            <span />
-            <span />
-            <span />
-            <strong>Jvision HR Console</strong>
-          </div>
-          <div className="metrics">
-            <article>
-              <span>員工人數</span>
-              <strong>{employees.length}</strong>
-            </article>
+        <div className="hero-stats" aria-label="Jvision HRIS Demo 人資指標">
+          <article className="stat-hero">
+            <span>今日人資體驗</span>
+            <strong>96% 入職完成率</strong>
+            <p>{employees.length} 位員工資料已同步，{candidates.length} 位候選人追蹤中，薪資與請假流程集中管理。</p>
+          </article>
+          <div className="stat-grid">
             <article>
               <span>月薪資預估</span>
-              <strong>{Math.round(totals.payroll / 1000)}K</strong>
+              <strong>NT$ {Math.round(totals.payroll / 1000)}K</strong>
             </article>
             <article>
               <span>招募中</span>
-              <strong>{candidates.length}</strong>
+              <strong>{candidates.length} 位</strong>
             </article>
-          </div>
-          <div className="ai-box">
-            <small>Jvision AI</small>
-            <p>{aiSummary}</p>
+            <article>
+              <span>待簽核事項</span>
+              <strong>{totals.openOffers} 件</strong>
+            </article>
+            <article>
+              <span>平均薪資</span>
+              <strong>{Math.round(totals.avgSalary / 1000)}K</strong>
+            </article>
           </div>
         </div>
       </section>
