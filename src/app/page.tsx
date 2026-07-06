@@ -140,10 +140,10 @@ export default function Page() {
 
       <section className="feature-row">
         {[
-          ["Hiring & Onboarding", "招募、面試、錄取簽核與入職任務一條線追蹤。"],
-          ["HR Data & Reporting", "員工主檔、薪資、假別與部門資料即時彙整。"],
-          ["Payroll & Time", "薪資試算、請假核准與待簽核提醒集中處理。"],
-          ["Performance", "人員狀態、團隊負荷與候選人評分快速掌握。"],
+          ["招募與入職", "招募、面試、錄取簽核與入職任務一條線追蹤。"],
+          ["人資資料與報表", "員工主檔、薪資、假別與部門資料即時彙整。"],
+          ["薪資與假勤", "薪資試算、請假核准與待簽核提醒集中處理。"],
+          ["績效管理", "人員狀態、團隊負荷與候選人評分快速掌握。"],
         ].map(([title, text]) => (
           <article key={title}>
             <h3>{title}</h3>
