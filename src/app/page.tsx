@@ -258,6 +258,17 @@ export default function Page() {
           </table>
         </div>
       </section>
+
+      <footer className="site-footer">
+        <div className="footer-brand">
+          <img src="/logo.png" alt="Jvision" />
+          <span>Jvision 人資薪酬招募管理平台 Demo</span>
+        </div>
+        <div className="footer-links">
+          <a href="https://jvision-hris.vercel.app">Demo 網址</a>
+          <a href="https://github.com/yunghua817/jvision-hris">GitHub</a>
+        </div>
+      </footer>
     </main>
   );
 }

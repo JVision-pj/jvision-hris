@@ -57,8 +57,12 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 22px;
-  padding: 18px 0;
-  backdrop-filter: blur(18px);
+  width: 100vw;
+  margin-left: calc((100vw - 100%) / -2);
+  padding: 16px max(80px, calc((100vw - 1740px) / 2 + 16px));
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(42, 67, 51, 0.06);
 }
 
 .brand,
@@ -71,17 +75,60 @@ main {
 }
 
 .brand img {
-  width: 132px;
+  width: 126px;
   height: auto;
 }
 
 .brand span {
   font-weight: 900;
+  color: var(--ink);
 }
 
 .nav-actions a {
   color: var(--muted);
   font-weight: 800;
+}
+
+.site-footer {
+  width: 100vw;
+  margin-left: calc((100vw - 100%) / -2);
+  padding: 34px max(80px, calc((100vw - 1740px) / 2 + 16px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  background: #102336;
+  color: #fff;
+}
+
+.footer-brand,
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-brand img {
+  width: 132px;
+  height: auto;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.footer-brand span {
+  font-weight: 800;
+}
+
+.footer-links {
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #d7ec75;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .hero {
@@ -425,6 +472,17 @@ tbody tr:hover {
 
   .topbar,
   .nav-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar,
+  .site-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-footer {
     align-items: flex-start;
     flex-direction: column;
   }
