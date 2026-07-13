@@ -69,5 +69,17 @@
   "職稱": "chức danh công việc",
   "薪資試算": "Tính lương",
   "部門": "phòng",
-  "開始測試": "Bắt đầu thử nghiệm"
+  "開始測試": "Bắt đầu thử nghiệm",
+  "已加入員工名冊，系統同步建立入職任務與薪資資料。": " đã được thêm vào danh sách nhân viên; hệ thống đã đồng thời tạo nhiệm vụ hội nhập và dữ liệu lương.",
+  " 的招募流程已推進，下一步由 HR 安排相關任務。": " đã được chuyển sang bước tuyển dụng tiếp theo; bộ phận HR sẽ sắp xếp các nhiệm vụ liên quan.",
+  " 的請假已核准，剩餘假別已自動更新。": " đã được phê duyệt nghỉ phép; số ngày phép còn lại đã được cập nhật tự động.",
+  "薪資試算完成：本月薪資 NT$ ": "Đã hoàn tất tính lương: tổng lương tháng này là NT$ ",
+  "，預估獎金池 NT$ ": ", quỹ thưởng ước tính là NT$ ",
+  "，待主管簽核。": ", đang chờ quản lý phê duyệt.",
+  "目前員工 ": "Hiện có ",
+  " 人，月薪資預估 NT$ ": " nhân viên, tổng lương tháng ước tính là NT$ ",
+  "。招募中 ": ". Hiện có ",
+  " 位，其中 ": " ứng viên đang tuyển dụng; trong đó ",
+  " 分數最高可優先推進；建議本週完成 ": " có điểm cao nhất và nên được ưu tiên. Khuyến nghị hoàn thành ",
+  " 筆招募追蹤與新人入職任務。": " mục theo dõi tuyển dụng và nhiệm vụ hội nhập nhân viên mới trong tuần này."
 }

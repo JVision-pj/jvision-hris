@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import enSentences from "./translations.en.json";
+import zhCNSentences from "./translations.zh-CN.json";
 import viSentences from "./translations.vi.json";
 
 type Locale = "zh-TW" | "zh-CN" | "en" | "vi";
@@ -15,6 +16,7 @@ const dictionaries: Record<Exclude<Locale, "zh-TW">, Record<string, string>> = {
 };
 
 const originalText = new WeakMap<Node, string>();
+const renderedText = new WeakMap<Node, string>();
 const originalAttributes = new WeakMap<Element, Record<string, string>>();
 
 function replaceAll(text: string, entries: Record<string, string>) {
@@ -28,6 +30,7 @@ function replaceAll(text: string, entries: Record<string, string>) {
 function translate(text: string, locale: Locale) {
   let output = text;
   if (locale === "en") output = replaceAll(output, enSentences);
+  if (locale === "zh-CN") output = replaceAll(output, zhCNSentences);
   if (locale === "vi") output = replaceAll(output, viSentences);
   if (locale !== "zh-TW") output = replaceAll(output, dictionaries[locale]);
   if (locale === "vi") output = output.replace(/[\u3400-\u9fff]+/g, "");
@@ -46,9 +49,11 @@ function applyTranslations(root: Node, locale: Locale) {
     if (!parent || parent.closest(".language-switcher") || ["SCRIPT", "STYLE"].includes(parent.tagName)) continue;
     const current = node.textContent || "";
     const previous = originalText.get(node);
-    if (previous === undefined || (current !== previous && current !== translate(previous, locale))) originalText.set(node, current);
+    const lastRendered = renderedText.get(node);
+    if (previous === undefined || (lastRendered !== undefined && current !== lastRendered)) originalText.set(node, current);
     const translated = translate(originalText.get(node) || "", locale);
     if (current !== translated) node.textContent = translated;
+    renderedText.set(node, translated);
   }
 
   const elements = root instanceof Element ? [root, ...root.querySelectorAll("*")] : [...document.querySelectorAll("*")];
