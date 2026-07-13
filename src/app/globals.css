@@ -566,13 +566,34 @@ html:lang(vi) :is(h1, h2, h3, button, .brand span) {
   min-width: 112px;
 }
 
+/* Prevent the full-bleed navigation/footer from creating a page-level scrollbar. */
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Keep the fixed language control clear of footer links at the end of the page. */
 .site-footer {
   padding-bottom: max(104px, calc(34px + env(safe-area-inset-bottom)));
 }
 
 @media (max-width: 720px) {
+  .language-switcher {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100%;
+    max-width: none;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 8px 12px !important;
+    border: 0 !important;
+    border-bottom: 1px solid #d8e1ec !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
   .site-footer {
-    padding-bottom: max(118px, calc(34px + env(safe-area-inset-bottom)));
+    padding-bottom: max(34px, env(safe-area-inset-bottom));
   }
 }
