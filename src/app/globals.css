@@ -565,3 +565,14 @@ html:lang(vi) :is(h1, h2, h3, button, .brand span) {
   width: auto;
   min-width: 112px;
 }
+
+/* Keep the fixed language control clear of footer links at the end of the page. */
+.site-footer {
+  padding-bottom: max(104px, calc(34px + env(safe-area-inset-bottom)));
+}
+
+@media (max-width: 720px) {
+  .site-footer {
+    padding-bottom: max(118px, calc(34px + env(safe-area-inset-bottom)));
+  }
+}
